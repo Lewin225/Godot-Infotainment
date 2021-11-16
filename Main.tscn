@@ -1,0 +1,134 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://AudiTypeExtended-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Media.tscn" type="PackedScene" id=2]
+[ext_resource path="res://AudiTypeScreen-Normal.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Temp_SetTab.gd" type="Script" id=4]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0.0190275, 1 )
+colors = PoolColorArray( 0.196078, 0.133333, 0.133333, 1, 0, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="Theme" id=3]
+Tabs/colors/font_color_bg = Color( 0.811765, 0.407843, 0.407843, 1 )
+Tabs/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Tabs/colors/font_color_fg = Color( 0.862745, 0.337255, 0.337255, 1 )
+Tabs/constants/hseparation = 15
+Tabs/constants/label_valign_bg = 2
+Tabs/constants/label_valign_fg = 0
+Tabs/constants/top_margin = 30
+Tabs/fonts/font = null
+Tabs/icons/close = null
+Tabs/icons/decrement = null
+Tabs/icons/decrement_highlight = null
+Tabs/icons/increment = null
+Tabs/icons/increment_highlight = null
+Tabs/styles/button = null
+Tabs/styles/button_pressed = null
+Tabs/styles/panel = null
+Tabs/styles/tab_bg = null
+Tabs/styles/tab_disabled = null
+Tabs/styles/tab_fg = null
+
+[sub_resource type="StyleBoxFlat" id=4]
+content_margin_left = 20.0
+content_margin_right = 50.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 0.117647, 0.117647, 0.117647, 0 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 50
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 50
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Content" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mode" type="TabContainer" parent="Content"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 3 )
+custom_styles/tab_fg = SubResource( 4 )
+custom_styles/tab_bg = SubResource( 4 )
+custom_styles/panel = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_disabled = Color( 0.156863, 0.121569, 0.121569, 1 )
+custom_colors/font_color_bg = Color( 0.701961, 0.203922, 0.203922, 1 )
+custom_colors/font_color_fg = Color( 1, 0, 0, 1 )
+custom_constants/side_margin = 10
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Media" parent="Content/Mode" instance=ExtResource( 2 )]
+
+[node name="Maps" type="Control" parent="Content/Mode"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 81.0
+
+[node name="Home" type="Control" parent="Content/Mode"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 81.0
+
+[node name="Stats" type="Control" parent="Content/Mode"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 81.0
+
+[node name="Settings" type="Control" parent="Content/Mode"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 81.0
+
+[node name="Label" type="Label" parent="."]
+margin_right = 304.0
+margin_bottom = 75.0
+custom_fonts/font = SubResource( 7 )
+text = ""
+align = 1
+valign = 1

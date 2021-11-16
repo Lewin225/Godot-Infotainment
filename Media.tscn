@@ -1,0 +1,144 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://MediaListEntry.tscn" type="PackedScene" id=1]
+[ext_resource path="res://PngItem_1189181.png" type="Texture" id=2]
+[ext_resource path="res://MediaPlayer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://FolderView.gd" type="Script" id=4]
+
+[node name="Media" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 81.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hbox" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FolderView" type="ScrollContainer" parent="Hbox"]
+margin_right = 501.261
+margin_bottom = 999.0
+rect_min_size = Vector2( 501.261, 0 )
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+script = ExtResource( 4 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Hbox/FolderView"]
+margin_right = 489.261
+margin_bottom = 1536.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MediaListEntry11" parent="Hbox/FolderView/VBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 489.0
+margin_bottom = 150.0
+title = "My Music"
+album = ""
+artist = "← "
+thumbnail = ExtResource( 2 )
+
+[node name="MediaListEntry2" parent="Hbox/FolderView/VBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 154.0
+margin_right = 489.0
+margin_bottom = 304.0
+title = "Keep Your Eyes Peeled"
+album = "...Like Clockwork"
+artist = "Queens of the Stone Age"
+
+[node name="MediaListEntry3" parent="Hbox/FolderView/VBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 308.0
+margin_right = 489.0
+margin_bottom = 458.0
+title = "I Sat by the Ocean"
+album = "...Like Clockwork"
+artist = "Queens of the Stone Age"
+
+[node name="MediaListEntry4" parent="Hbox/FolderView/VBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 462.0
+margin_right = 489.0
+margin_bottom = 612.0
+title = "If I Had a Tail"
+album = "...Like Clockwork"
+artist = "Queens of the Stone Age"
+
+[node name="MediaListEntry5" parent="Hbox/FolderView/VBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 616.0
+margin_right = 489.0
+margin_bottom = 766.0
+title = "My God Is the Sun"
+album = "...Like Clockwork"
+artist = "Queens of the Stone Age"
+
+[node name="MediaListEntry6" parent="Hbox/FolderView/VBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 770.0
+margin_right = 489.0
+margin_bottom = 920.0
+title = "Kalopsia"
+album = "...Like Clockwork"
+artist = "Queens of the Stone Age"
+
+[node name="MediaListEntry7" parent="Hbox/FolderView/VBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 924.0
+margin_right = 489.0
+margin_bottom = 1074.0
+title = "Fairweather Friends"
+album = "...Like Clockwork"
+artist = "Queens of the Stone Age"
+
+[node name="MediaListEntry8" parent="Hbox/FolderView/VBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 1078.0
+margin_right = 489.0
+margin_bottom = 1228.0
+title = "Smooth Sailing"
+album = "...Like Clockwork"
+artist = "Queens of the Stone Age"
+
+[node name="MediaListEntry9" parent="Hbox/FolderView/VBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 1232.0
+margin_right = 489.0
+margin_bottom = 1382.0
+title = "I Appear Missing"
+album = "...Like Clockwork"
+artist = "Queens of the Stone Age"
+
+[node name="MediaListEntry10" parent="Hbox/FolderView/VBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 1386.0
+margin_right = 489.0
+margin_bottom = 1536.0
+title = "...Like Clockwork"
+album = "...Like Clockwork"
+artist = "Queens of the Stone Age"
+
+[node name="Playing" type="Control" parent="Hbox"]
+margin_left = 505.0
+margin_right = 1920.0
+margin_bottom = 999.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MediaPlayer" parent="Hbox/Playing" instance=ExtResource( 3 )]

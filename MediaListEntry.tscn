@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://81mBE1DhhYL._SS500_.jpg" type="Texture" id=1]
+[ext_resource path="res://AudiTypeScreen-Normal.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://AudiTypeScreen-Light.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://MediaListEntry.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 35
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[node name="MediaListEntry" type="Control"]
+anchor_right = 0.318229
+anchor_bottom = 0.138889
+margin_right = -611.0
+rect_min_size = Vector2( 0, 150 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hbox" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 150 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Hbox"]
+margin_right = 150.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="Data" type="VBoxContainer" parent="Hbox"]
+margin_left = 160.0
+margin_right = 161.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Title" type="Label" parent="Hbox/Data"]
+margin_right = 1.0
+margin_bottom = 47.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 1 )
+text = "Title"
+valign = 1
+clip_text = true
+
+[node name="Artist" type="Label" parent="Hbox/Data"]
+margin_top = 51.0
+margin_right = 1.0
+margin_bottom = 98.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 2 )
+text = "Artist"
+valign = 1
+clip_text = true
+
+[node name="Album" type="Label" parent="Hbox/Data"]
+margin_top = 102.0
+margin_right = 1.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 2 )
+text = "Album"
+valign = 1
+clip_text = true

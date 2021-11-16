@@ -1,0 +1,183 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://AudiTypeScreen-Normal.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://81mBE1DhhYL._SS500_.jpg" type="Texture" id=2]
+[ext_resource path="res://AudiTypeScreen-Light.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://slider.png" type="Texture" id=4]
+[ext_resource path="res://slider_alt.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 50
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxLine" id=7]
+color = Color( 0.627451, 0.627451, 0.627451, 1 )
+grow_begin = 0.0
+thickness = 10
+
+[sub_resource type="StyleBoxLine" id=8]
+color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxLine" id=6]
+color = Color( 1, 1, 1, 1 )
+thickness = 10
+
+[sub_resource type="Theme" id=5]
+HSlider/icons/grabber = ExtResource( 4 )
+HSlider/icons/grabber_disabled = null
+HSlider/icons/grabber_highlight = ExtResource( 5 )
+HSlider/icons/tick = null
+HSlider/styles/grabber_area = SubResource( 7 )
+HSlider/styles/grabber_area_highlight = SubResource( 8 )
+HSlider/styles/slider = SubResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[node name="MediaPlayer" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+margin_right = 1920.0
+margin_bottom = 826.0
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+stretch_mode = 6
+
+[node name="Label5" type="Label" parent="VBoxContainer/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -413.0
+margin_right = 236.0
+margin_bottom = 413.0
+custom_fonts/font = SubResource( 2 )
+text = "<<"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="VBoxContainer/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -105.0
+margin_top = -77.0
+margin_right = 44.0
+margin_bottom = 61.0
+custom_fonts/font = SubResource( 2 )
+text = " >"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label7" type="Label" parent="VBoxContainer/TextureRect"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -413.0
+margin_bottom = 413.0
+custom_fonts/font = SubResource( 2 )
+text = " >>"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+margin_top = 830.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_min_size = Vector2( 0, 250 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Panel/VBoxContainer"]
+margin_right = 1920.0
+margin_bottom = 64.0
+
+[node name="Label2" type="Label" parent="VBoxContainer/Panel/VBoxContainer/HBoxContainer"]
+margin_top = 1.0
+margin_right = 144.0
+margin_bottom = 62.0
+custom_fonts/font = SubResource( 9 )
+text = "00:00"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/Panel/VBoxContainer/HBoxContainer"]
+margin_left = 148.0
+margin_right = 1772.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+theme = SubResource( 5 )
+max_value = 100.0
+step = 0.1
+value = 50.0
+
+[node name="Label3" type="Label" parent="VBoxContainer/Panel/VBoxContainer/HBoxContainer"]
+margin_left = 1776.0
+margin_top = 1.0
+margin_right = 1920.0
+margin_bottom = 62.0
+custom_fonts/font = SubResource( 9 )
+text = "04:23"
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel/VBoxContainer"]
+margin_top = 68.0
+margin_right = 1920.0
+margin_bottom = 129.0
+custom_fonts/font = SubResource( 3 )
+text = "The Vampyre of Time and Memory"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="VBoxContainer/Panel/VBoxContainer"]
+margin_top = 133.0
+margin_right = 1920.0
+margin_bottom = 194.0
+custom_fonts/font = SubResource( 3 )
+text = "Queens of the Stone Age - ...Like Clockwork"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
